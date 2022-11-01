@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: wineimage
-          image: agwineacr.azurecr.io/redwineflask:v1
+          image: docker.io/ambarishg/redwineflask:v1
           ports:
             - containerPort: 5000
 ---
