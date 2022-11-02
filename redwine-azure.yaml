@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: winedeploy
   labels:
-    app: winedeployapp
+    app: web
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: wine
+      app: web
   template:
     metadata:
       labels:
-        app: wine
+        app: web
     spec:
       containers:
         - name: wineimage
-          image: docker.io/ambarishg/redwine:v1
+          image: ambarishg/redwine:v1
           ports:
             - containerPort: 8501
 ---
@@ -29,4 +29,4 @@ spec:
   ports:
   - port: 8501
   selector:
-    app: wine
+    app: web
